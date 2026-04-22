@@ -1,0 +1,433 @@
+{
+    "policy_documentation": {
+        "insured_name": {
+            "first_name": "OLIVIA",
+            "middle_name": "K",
+            "last_name": "SZWAJKOWSKI"
+        },
+        "co_insured_name": {
+            "first_name": "Olivia",
+            "middle_name": "K",
+            "last_name": "Szwajkowski"
+        },
+        "effective_date": "2024-10-01",
+        "expiration_date": "2025-10-01",
+        "location_of_insured": {
+            "street": "36648 N IOLA AVE",
+            "city": "INGLESIDE",
+            "state": "IL",
+            "zip_code": "60041-9608"
+        }
+    },
+    "carrier": [
+        {
+            "carrier_id": "carrier_001",
+            "carrier_name": "Auto Club Insurance Association"
+        },
+        {
+            "carrier_id": "carrier_002",
+            "carrier_name": "Encompass Insurance Company"
+        }
+    ],
+    "property_details": {
+        "year_built": "",
+        "square_footage": "",
+        "roof_type": "",
+        "year_roof_updated": "",
+        "construction_type": ""
+    },
+    "coverage_limit_and_comparison": [
+        {
+            "coverage_name": "A - Dwelling",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "coverages_values": {
+                        "limit": 310122,
+                        "deductible": 1000
+                    }
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 253400,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverage_name": "B - Additional Structures",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "coverages_values": {
+                        "limit": 31012,
+                        "deductible": 1000
+                    }
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 25340,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverage_name": "C - Personal Property",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "coverages_values": {
+                        "limit": 155061,
+                        "deductible": 1000
+                    }
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 126700,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverage_name": "Additional Living Expense",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "coverages_values": {
+                        "limit": 31012,
+                        "deductible": 1000
+                    }
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 50680,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverage_name": "E - Personal Liability (Each Occurrence)",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "coverages_values": {
+                        "limit": 300000,
+                        "deductible": 0
+                    }
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 300000,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverage_name": "F - Medical Payments to Others (Each Person)",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "coverages_values": {
+                        "limit": 1000,
+                        "deductible": 0
+                    }
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 1000,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverage_name": "Fair Rental Income",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 0,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverage_name": "Building Codes",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 25340,
+                        "deductible": 0
+                    }
+                }
+            ]
+        }
+    ],
+    "discounts_applied": [
+        {
+            "discount_name": "Advance Purchase",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "EFT",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Claim Free",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Home Buyer",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Paperless",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Payment",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Premier",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Safety Device",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Smoke Free",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "AAA Membership",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Welcome Discount",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_002",
+                    "discount_values": "true"
+                }
+            ]
+        },
+        {
+            "discount_name": "Protective Device Discount",
+            "discount_carriers": [
+                {
+                    "carrier_id": "carrier_002",
+                    "discount_values": "true"
+                }
+            ]
+        }
+    ],
+    "deductibles": [
+        {
+            "deductibles_name": "All Other Perils",
+            "deductibles_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "deductibles_values": {
+                        "flat_amount": 1000
+                    }
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "deductibles_values": {
+                        "flat_amount": 1000
+                    }
+                }
+            ]
+        },
+        {
+            "deductibles_name": "Windstorm and Hail",
+            "deductibles_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "deductibles_values": {
+                        "flat_amount": 1000
+                    }
+                },
+                {
+                    "carrier_id": "carrier_002",
+                    "deductibles_values": {
+                        "flat_amount": 2500
+                    }
+                }
+            ]
+        }
+    ],
+    "additional_coverages": [
+        {
+            "coverages_name": "Roof Materials Extended",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "coverages_values": {
+                        "limit": 0,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverages_name": "Building Codes",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_001",
+                    "coverages_values": {
+                        "limit": 20,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverages_name": "Identity Theft Expenses Coverage",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 25000,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverages_name": "Loss Assessments",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 500,
+                        "deductible": 0
+                    }
+                }
+            ]
+        },
+        {
+            "coverages_name": "Roof Replacement Coverage",
+            "coverages_carriers": [
+                {
+                    "carrier_id": "carrier_002",
+                    "coverages_values": {
+                        "limit": 0,
+                        "deductible": 0
+                    }
+                }
+            ]
+        }
+    ],
+    "insured_companies_and_quotes": [
+        {
+            "carrier_id": "carrier_001",
+            "policy_period": "12",
+            "total_premium": 1819.27,
+            "paid_in_full_discount": 1819.27,
+            "final_paid_in_full_amount": null
+        },
+        {
+            "carrier_id": "carrier_002",
+            "policy_period": "12",
+            "total_premium": 1272.0,
+            "paid_in_full_discount": 0.0,
+            "final_paid_in_full_amount": 1272.0
+        }
+    ],
+    "conclusion_and_recommendation": [
+        {
+            "carrier_id": "carrier_001",
+            "conclusion": "Auto Club Insurance Association offers higher coverage limits on Dwelling, Additional Structures, and Personal Property compared to Encompass Insurance Company. Auto Club Insurance Association also provides a broader range of discounts, including Advance Purchase, EFT, and AAA Membership, which are not available with Encompass. Their deductibles for All Other Perils and Windstorm and Hail are both $1000, lower than Encompass's windstorm deductible of $2500. Additional coverages like Building Codes at 20% limit are present but Roof Materials Extended coverage details are empty.",
+            "recommendation": "For customers seeking higher coverage limits and a wider variety of discounts, Auto Club Insurance Association is recommended. Their lower windstorm deductible also makes them more favorable for those in regions prone to such perils."
+        },
+        {
+            "carrier_id": "carrier_002",
+            "conclusion": "Encompass Insurance Company provides specific coverages like Identity Theft Expenses Coverage with a $25000 limit and Loss Assessments, which Auto Club Insurance Association does not list. However, their coverage limits for Dwelling and Personal Property are lower. The deductible for Windstorm and Hail is significantly higher at $2500 compared to Auto Club's $1000. Discounts offered are fewer, focusing mainly on Claim Free, Paperless, and Home Buyer discounts.",
+            "recommendation": "Encompass Insurance Company is advisable for customers interested in niche coverages such as Identity Theft Expenses and Loss Assessments. However, those accepting lower overall coverage limits and willing to pay higher windstorm deductibles may find this acceptable."
+        }
+    ],
+    "recommendation": "Auto Club Insurance Association generally provides better value due to higher coverage limits, more extensive discounts, and lower deductibles, making it preferable for most customers. Encompass Insurance Company may appeal to those requiring specialized additional coverages but comes with trade-offs in coverage limits and deductibles.",
+    "token": {
+        "input_token": 1009,
+        "output_token": 388,
+        "cached_token": 0
+    }
+}

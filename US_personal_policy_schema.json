@@ -1,0 +1,242 @@
+{
+    "Auto": {
+        "lead_repo": {
+            "insured": {
+                "first_name": "first name of the insured individual.",
+                "middle_name": "middle name of the insured individual.",
+                "last_name": "last name of the insured individual."
+            },
+            "email": "email address of the insured individual.",
+            "phone_number": "phone number of the insured individual.",
+            "agency_phone_number": "agency's contact phone number.",
+            "address_detail": {
+                "insured_address": {
+                    "street_address": "Street address line of the insured individual.",
+                    "city": "City name of the insured individual.",
+                    "state": "State or province of the insured individual.",
+                    "zip_code": "Postal or ZIP code of the insured individual."
+                },
+                "mailing_address": {
+                    "street_address": "Mailing street address line of the insured individual.",
+                    "city": "Mailing city name of the insured individual.",
+                    "state": "Mailing state or province of the insured individual.",
+                    "zip_code": "Mailing postal or ZIP code of the insured individual."
+                }
+            }
+        },
+        "questionaire_repo": {
+            "co_insured": [
+                {
+                    "name": {
+                        "first_name": "first name of the co-insured individual.",
+                        "middle_name": "middle name of the co-insured individual.",
+                        "last_name": "last name of the co-insured individual."
+                    },
+                    "date_of_birth": "Date of birth of the co-insured individual.",
+                    "gender": "Gender identity of the co-insured individual.",
+                    "relationship": "Relationship of co-insured to primary insured.",
+                    "marital_status": "Current marital status of the co-insured individual."
+                }
+            ],
+            "policy_details": {
+                "effective_date": "date when the insurance policy becomes effective.",
+                "expiration_date": "date when the insurance policy expires.",
+                "policy_term_length": "length of the policy term, difference between effective_date and expiration_date in months.",
+                "policy_premium": "Total policy premium amount."
+            },
+            "coverage_details": {
+                "bodily_injury": "bodily injury coverage limit.",
+                "property_damage": "property damage coverage limit.",
+                "personal_injury_protection": "personal injury protection coverage limit.",
+                "uninsured_motorist": "uninsured motorist coverage limit.",
+                "uninsured_motorist_pd": "uninsured motorist property damage coverage limit.",
+                "underinsured_motorist": "underinsured motorist coverage limit.",
+                "medical_payments": "medical payments coverage limit."
+            },
+            "driver_details": [
+                {
+                    "name": {
+                        "first_name": "First (given) name of the individual driver, exactly as written in the document.",
+                        "middle_name": "Middle name of the individual driver, if explicitly mentioned in the document. Leave empty if not present.",
+                        "last_name": "Last (family/surname) of the individual driver, exactly as written in the document."
+                    },
+                    "date_of_birth": "Date of birth of the individual driver, as stated in the document (do not infer or calculate).",
+                    "gender": "Gender of the individual driver, only if explicitly mentioned in the document.",
+                    "relationship": "Relationship of the driver to the primary insured, as explicitly stated.",
+                    "marital_status": "Marital status of the individual driver, only if clearly specified in the document.",
+                    "license_status": "Current driver’s license status (e.g., valid, suspended), only if explicitly mentioned.",
+                    "licensed_state": "State that issued the driver’s license, as written in the document.",
+                    "license_number": "Driver’s license number, exactly as shown in the document.",
+                    "licensed_age": "Age at which the driver was first licensed, only if explicitly stated (do not calculate from dates).",
+                    "rated": "Boolean value indicating whether the driver is listed as a rated driver on the policy. Set only if clearly indicated.",
+                    "driver_discounts": "List or description of driver-related discounts explicitly mentioned for this driver.",
+                    "good_student_discount": "Boolean value indicating good student discount eligibility, only if explicitly stated.",
+                    "mature_driver_discount": "Boolean value indicating mature driver discount eligibility, only if explicitly stated.",
+                    "safe_driver_discount": "Boolean value indicating safe driver discount eligibility, only if explicitly stated."
+                }
+            ],
+            "vehicle_details": [
+                {
+                    "vin": "vehicle identification number.",
+                    "make": "make of the vehicle.",
+                    "model": "full model name of the vehicle including trim level.",
+                    "year": "year of the vehicle.",
+                    "assigned_driver": {
+                        "first_name": "first name of the insured individual assigned to this vehicle.",
+                        "middle_name": "middle name of the insured individual assigned to this vehicle.",
+                        "last_name": "last name of the insured individual assigned to this vehicle."
+                    },
+                    "garaged_state": "state where the vehicle is garaged.",
+                    "garaging_address": {
+                        "street": "Street address line of the garaging address.",
+                        "city": "City name of the garaging address.",
+                        "state": "State or province of the garaging address.",
+                        "zip_code": "Postal or ZIP code of the garaging address."
+                    },
+                    "annual_miles": "number of miles driven annually.",
+                    "vehicle_usage": "primary usage of the vehicle.",
+                    "financed_vehicle": "Whether the vehicle is financed. (type: Boolean)",
+                    "coverage_details": {
+                        "comprehensive_deductible": "comprehensive deductible amount.",
+                        "collision_deductible": "collision deductible amount.",
+                        "towing_coverage": "towing coverage limit.",
+                        "rental_reimbursement": "rental reimbursement limit.",
+                        "full_glass_coverage": "Whether full glass coverage is included. (type: Boolean)"
+                    },
+                    "rented_on_turo": "Whether the vehicle is rented on Turo. (type: Boolean)",
+                    "ownership_type": "type of ownership of the vehicle.",
+                    "anti_theft_installed": "Whether an anti-theft device is installed. (type: Boolean)"
+                }
+            ],
+            "mortgage_details": [
+                {
+                    "mortgage_vehicle_name": "Name or identifier of mortgaged vehicle.",
+                    "mortgage_company": "Name of the mortgage or lien holder company.",
+                    "mortgage_address": "Address of the mortgage company.",
+                    "mortgage_phone": "Phone number of the mortgage company.",
+                    "mortgage_email": "Email address of the mortgage company.",
+                    "loan_number": "Loan or account number."
+                }
+            ],
+            "claim_details": [
+                {
+                    "date_of_loss": "Date when the loss occurred.",
+                    "type_of_claim": "Type or category of claim.",
+                    "property_involved": "Whether property was involved. (type: Boolean)",
+                    "amount_paid": "Amount paid for the claim.",
+                    "claim_status": "Current status of the claim."
+                }
+            ]
+        }
+    },
+    "Home": {
+        "lead_repo": {
+            "insured": {
+                "first_name": "first name of the insured individual.",
+                "middle_name": "middle name of the insured individual.",
+                "last_name": "last name of the insured individual."
+            },
+            "email": "email address of the insured individual.",
+            "phone_number": "phone number of the insured individual.",
+            "agency_phone_number": "agency's contact phone number.",
+            "address_detail": {
+                "insured_address": {
+                    "street_address": "Street address line of the insured individual.",
+                    "city": "City name of the insured individual.",
+                    "state": "State or province of the insured individual.",
+                    "zip_code": "Postal or ZIP code of the insured individual."
+                },
+                "mailing_address": {
+                    "street_address": "Mailing street address line of the insured individual.",
+                    "city": "Mailing city name of the insured individual.",
+                    "state": "Mailing state or province of the insured individual.",
+                    "zip_code": "Mailing postal or ZIP code of the insured individual."
+                }
+            }
+        },
+        "questionaire_repo": {
+            "co_insured": [
+                {
+                    "name": {
+                        "first_name": "first name of the co-insured individual.",
+                        "middle_name": "middle name of the co-insured individual.",
+                        "last_name": "last name of the co-insured individual."
+                    },
+                    "date_of_birth": "Date of birth of the co-insured individual.",
+                    "gender": "Gender identity of the co-insured individual.",
+                    "relationship": "Relationship of the co-insured to primary insured.",
+                    "marital_status": "Current marital status of the co-insured."
+                }
+            ],
+            "policy_details": {
+                "effective_date": "date when the insurance policy becomes effective.",
+                "expiration_date": "date when the insurance policy expires.",
+                "policy_term_length": "length of the policy term, difference between effective_date and expiration_date in months.",
+                "policy_premium": "Total policy premium amount.",
+                "protection_class": {
+                    "dwelling_coverage": "amount of coverage for the dwelling. (also known as \"Coverage A - dwelling_coverage\")",
+                    "other_structure_coverage": "amount of coverage for other structures on the property. (also known as \"Coverage B - other_structure_coverage\")",
+                    "personal_property_coverage": "amount of coverage for personal property. (also known as \"Coverage C - personal_property_coverage/contents\")",
+                    "loss_of_use_coverage": "amount of coverage for loss of use. (also known as \"Coverage D - loss_of_use_coverage\")",
+                    "personal_liability_coverage": "amount of coverage for personal liability. (also known as \"Coverage E - personal_liability_coverage\")",
+                    "medical_payments_coverage": "amount of coverage for medical payments. (also known as \"Coverage F - medical_payments_coverage\")",
+                    "additional_coverage": {
+                        "roof_loss_settlement": "Roof loss settlement coverage. (type: Boolean)",
+                        "equipment_breakdown": "Equipment breakdown coverage. (type: Boolean)",
+                        "mold_fungi_coverage": "Mold and fungi coverage. (type: Boolean)",
+                        "personal_injury": "Personal injury coverage. (type: Boolean)",
+                        "animal_liability": "Animal liability coverage. (type: Boolean)",
+                        "increased_cost_of_construction": "Increased cost of construction coverage. (type: Boolean)",
+                        "replacement_cost_contents": "Replacement cost for contents coverage amount.",
+                        "ordinance_or_law": "Ordinance or law coverage amount.",
+                        "water_backup": "Water backup coverage amount.",
+                        "service_line_coverage": "Service line coverage amount.",
+                        "sinkhole_collapse": "Sinkhole collapse coverage amount.",
+                        "loss_assessment": "Loss assessment coverage amount."
+                    },
+                    "coverages_deductibles": {
+                        "aop_deductible": "deductible amount for all other perils.",
+                        "wind_hurricane_deductible": "deductible amount for wind and hurricane damage.",
+                        "earthquake_deductible": "deductible amount for earthquake damage."
+                    }
+                }
+            },
+            "property_details": {
+                "year_built": "year the property was built.",
+                "residence_type": "type of residence.",
+                "square_footage": "square footage of the property.",
+                "roof_type_shape": "type and shape of the roof.",
+                "electrical_panel_type": "type of electrical panel in the property.",
+                "floors_stories": "number of floors or stories in the property.",
+                "exterior": "exterior material of the property.",
+                "framing": "framing material of the property.",
+                "construction_style": "style of construction of the property.",
+                "construction_quality": "quality of construction of the property.",
+                "kitchen_quality": "quality of the kitchen in the property.",
+                "bedrooms": "number of bedrooms in the property.",
+                "full_bathrooms": "number of full bathrooms in the property.",
+                "half_bathrooms": "number of half bathrooms in the property.",
+                "bathroom_quality": "quality of the bathrooms in the property.",
+                "garage_type": "type of garage in the property.",
+                "garage_stalls": "number of garage stalls in the property.",
+                "detached_structure_types": "types of detached structures on the property."
+            },
+            "mortgage_details": {
+                "mortgage_company": "Name of the mortgage or lien holder company.",
+                "mortgage_address": "Address of the mortgage company.",
+                "mortgage_phone": "Phone number of the mortgage company.",
+                "mortgage_email": "Email address of the mortgage company.",
+                "loan_number": "Loan or account number."
+            },
+            "claim_details": [
+                {
+                    "date_of_loss": "Date when the loss occurred.",
+                    "type_of_claim": "Type or category of claim.",
+                    "property_involved": "Property involved in the claim.",
+                    "amount": "Claim amount.",
+                    "claim_status": "Current status of the claim."
+                }
+            ]
+        }
+    }
+}

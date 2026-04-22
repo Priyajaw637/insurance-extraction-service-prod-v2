@@ -1,0 +1,797 @@
+{
+    "insured_profile": {
+        "insured_name": "Legal name of the insured entity that will appear on the policy declarations.",
+        "operating_as": "Trade name used publicly by the insured entity.",
+        "address": "Primary business address for the insured; used for rating/territory references.",
+        "website": "Website URL of the insured entity if available.",
+        "insurer_website": "Website URL of the insurer if available.",
+        "insurer_name": "Name of the insurer.",
+        "primary_contact": {
+            "name": "Day-to-day contact for coverage and binding communications with the insured entity.",
+            "title": "Position of the primary contact within the organization of the insured entity.",
+            "phone": "Phone number of the insured primary contact.",
+            "email": "Email of the insured primary contact."
+        },
+        "business_overview": {
+            "nature_of_operations": "Plain-English description of what the insured does, as context for coverage choices.",
+            "years_in_business": "Operating history; signals maturity and risk profile of the insured entity.",
+            "geographic_scope": "Where the insured operates (provinces/regions); useful for jurisdiction/territory context.",
+            "locations_count": "Number of active locations/branches used for high-level exposure sizing of the insured entity.",
+            "risk_basis_for_quotation": {
+                "annual_revenues_usd": "Top-line revenue used as an exposure base for several LOBs (e.g., CGL, Cyber) of the insured entity.",
+                "payroll_usd": "Total payroll used for rating lines like WC/EL or certain contractor classes of the insured entity.",
+                "assets_insured_usd": "Aggregate limit proxy for property schedules or balance-sheet exposure of the insured entity."
+            }
+        }
+    },
+    "commercial_general_liability": {
+        "general_info": {
+            "claims_made_form": "Indicates whether the policy is on a claims-made form || type: boolean",
+            "occurrence_form": "Indicates whether the policy is on an occurrence form || type: boolean",
+            "per_location_or_project_aggregate": "Indicates whether aggregate limits are applied per location or per project || type: boolean",
+            "deductible_type": "Type of deductible applied (Per Claim / Per Occurrence / Other)",
+            "deductible_amount_bi_pd": "Deductible amount applicable to Bodily Injury or Property Damage",
+            "other_deductible_description": "Description and amount of any other deductible specified"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($usd) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in usd for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "limits": {
+            "general_aggregate_limit": "General Aggregate Limit of the policy || Data Type: Numeric",
+            "products_completed_operations_aggregate_limit": "Products/Completed Operations Aggregate Limit (may be same as General Aggregate, INCLUDED, or EXCLUDED) || Data Type: Numeric or String",
+            "personal_advertising_injury_limit": "Limit for Personal and Advertising Injury coverage || Data Type: Numeric",
+            "each_occurrence_limit": "Each Occurrence Limit for Bodily Injury and Property Damage || Data Type: Numeric",
+            "damage_to_rented_premises_limit": "Limit for Damage to Rented Premises per occurrence || Data Type: Numeric",
+            "medical_expense_limit": "Medical Expense Limit per person || Data Type: Numeric"
+        },
+        "employee_benefits_liability": {
+            "employee_benefits_liability_limit": "Limit for Employee Benefits Liability coverage || Data Type: Numeric",
+            "ebl_deductible_per_claim": "Deductible per claim for Employee Benefits Liability || Data Type: Numeric",
+            "ebl_retroactive_date": "Retroactive date for Employee Benefits Liability coverage || Data Type: Date",
+            "ebl_number_of_employees": "Total number of employees covered under Employee Benefits Liability || Data Type: Integer",
+            "ebl_number_covered": "Number of employees covered under the Employee Benefits Liability endorsement || Data Type: Integer"
+        },
+        "location_classification_table": [
+            {
+                "location_identifier": "Location identifier for the classification table",
+                "location_name": "Name or description of the location",
+                "classification_details": [
+                    {
+                        "class_code": "Classification code",
+                        "classification_description": "Description of the classification",
+                        "premium_basis": "Comma-separated list of all premium bases applicable to this class code as shown in the document (e.g., 'Premises and Operations, Products/Completed Operations')",
+                        "exposure": "Exposure value corresponding to the class code || Data Type: Numeric",
+                        "premium_breakdown": [
+                            {
+                                "basis": "Premium basis name exactly as shown in the document",
+                                "rate": "Rate applied for this basis || Data Type: Numeric",
+                                "premium": "Premium amount calculated for this basis || Data Type: Numeric"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "additional_interests": {
+            "additional_interest_name": "Name of the additional interest (e.g., Mortgagee, Loss Payee)",
+            "additional_interest_address": "Address of the additional interest",
+            "interest_type": "Type of interest (e.g., Additional Insured, Mortgagee, Loss Payee)"
+        }
+    },
+    "commercial_property": {
+        "premises_info_table": [
+            {
+                "premise_identifier": "Premise identifier which is unique and found in the document",
+                "building_number": "Building identifier",
+                "premise_address": "Address of the premise",
+                "lienholder_name": "Name of the lienholder",
+                "lienholder_address": "Address of the lienholder"
+            }
+        ],
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($usd) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in usd for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "coverages": {
+            "actual_cash_value_option": "Whether Actual Cash Value valuation is selected || Data Type: boolean",
+            "seasonal_increase_percentage": "Percentage increase applied seasonally to personal property coverage || Data Type: Percentage",
+            "automatic_annual_increase": "Annual percentage increase applied to building coverage || Data Type: Percentage",
+            "equipment_breakdown_limit": "Limit for equipment breakdown coverage || Data Type: Numeric",
+            "business_income_extra_expense": "Limit for Business Income and Extra Expense coverage || Data Type: Numeric",
+            "building_limit_of_insurance": "Limit of insurance for the building || Data Type: Numeric",
+            "business_personal_property_limit": "Limit for business personal property || Data Type: Numeric",
+            "glass_coverage": "Details of glass coverage including limit and deductibles ",
+            "coinsurance": "Coinsurance percentage || Data Type: Percentage",
+            "blanket_coverage": "Whether the policy provides blanket coverage || Data Type: boolean",
+            "deductible": "General property deductible amount || Data Type: Numeric",
+            "valuation_method": "Method used for valuation (e.g., Replacement Cost, Actual Cash Value)",
+            "windstorm_or_hail_percentage": "Deductible percentage for windstorm or hail losses || Data Type: Percentage",
+            "optional_coverage_deductible": "Deductible applicable to optional coverages || Data Type: Numeric"
+        },
+        "mortgage_details": [
+            {
+                "mortgagee_address": "Address of the mortgagee",
+                "mortgagee_name": "Name of the mortgagee",
+                "loan_number": "Loan reference number",
+                "loss_payee_name": "Name of the loss payee",
+                "loss_payee_address": "Address of the loss payee"
+            }
+        ]
+    },
+    "workers_compensation": {
+        "general_info": {
+            "description_of_operations": "Description of business type and operations",
+            "SIC_code": "Standard Industrial Classification code",
+            "NAIC_code": "North American Industry Classification code",
+            "years_in_current_operations": "Number of years in current business operations || Data Type: Integer"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($usd) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in usd for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "coverages": {
+            "states_to_cover": "States where workers compensation coverage applies || Data Type: Array of Strings",
+            "employers_liability_limit_accident": "Employers liability limit per accident for bodily injury || Data Type: Numeric",
+            "employers_liability_limit_disease_policy": "Employers liability disease limit (policy aggregate) || Data Type: Numeric",
+            "employers_liability_limit_disease_employee": "Employers liability disease limit per employee || Data Type: Numeric",
+            "experience_mod_factor": "Experience modification factor (MOD rating) || Data Type: Decimal",
+            "premium_basis": "Basis used for premium calculation (e.g., payroll)",
+            "audit_type": "Type of audit (e.g., Annual, Monthly)",
+            "subcontractors_used": "Whether subcontractors are used || Data Type: boolean"
+        },
+        "locations": [
+            {
+                "location_identifier": "Location identifier which is found in the document",
+                "location_address": "Full Address of the location",
+                "city": "City of the location",
+                "zip_code": "Zip code of the location",
+                "duties_performed": "Description of duties performed at the location"
+            }
+        ],
+        "hazards": [
+            {
+                "location_identifier": "Full address of the location",
+                "hazard_details": [
+                    {
+                        "class_code": "Classification code",
+                        "description_of_duties_performed": "Description of duties for the classification",
+                        "employees_full_time_count": "Number of full-time employees || Data Type: Integer",
+                        "employees_part_time_count": "Number of part time employees || Data Type: Integer",
+                        "estimated_annual_payroll": "Estimated annual payroll || Data Type: Numeric",
+                        "rate_per_100_payroll": "Premium rate per $100 of payroll || Data Type: Numeric",
+                        "estimated_annual_premium": "Estimated annual premium || Data Type: Numeric"
+                    }
+                ]
+            }
+        ],
+        "individuals_inclusion_exclusion": [
+            {
+                "location_identifier": "Full address of the location",
+                "owner_name": "Name of owner, partner, or officer",
+                "title": "Title or relationship",
+                "ownership_percentage": "Percentage of ownership || Data Type: Percentage",
+                "included_or_excluded": "Whether the individual is included or excluded from coverage",
+                "payroll": "Payroll assigned if included || Data Type: Numeric",
+                "state": "State where the individual is located"
+            }
+        ]
+    },
+    "EPLI": {
+        "general_details": {
+            "retroactive_date": "Retroactive date for claims-made coverage || Data Type: Date",
+            "policy_limit_per_occurrence": "Maximum limit payable for a single claim or occurrence || Data Type: Numeric",
+            "policy_limit_aggregate": "Maximum aggregate limit payable for all claims during the policy term || Data Type: Numeric",
+            "deductible_retention": "Amount of retention or deductible the insured must pay per claim || Data Type: Numeric",
+            "coinsurance_requirement": "Percentage of claim costs shared by the insured, if applicable || Data Type: Percentage",
+            "named_insured": "Primary business or entity covered by the policy",
+            "insured_persons": "Categories of individuals considered insured (e.g., owners, employees, volunteers)",
+            "policy_type": "Type of policy form (typically claims-made for EPLI) || Data Type: boolean",
+            "ERP_tail_coverage": "Availability or details of Extended Reporting Period (tail) coverage or Boolean",
+            "premium_basis": "Basis used for calculating premium (e.g., employee count, turnover)",
+            "hammer_clause": "Provision limiting insurer liability if insured refuses settlement || Data Type: boolean"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($usd) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "covered_wrongful_acts": {
+            "wrongful_termination": "Coverage for wrongful termination claims || Data Type: boolean",
+            "wrongful_demotion_or_failure_to_promote": "Coverage for demotion or failure to promote claims || Data Type: boolean",
+            "wrongful_discipline_or_reassignment": "Coverage for improper discipline or reassignment || Data Type: boolean",
+            "discrimination": "Coverage for discrimination claims under applicable laws || Data Type: boolean",
+            "sexual_harassment": "Coverage for sexual harassment or hostile workplace claims || Data Type: boolean",
+            "retaliation": "Coverage for retaliation against whistleblowers or complainants || Data Type: boolean",
+            "negligent_hiring_or_supervision": "Coverage for negligent hiring or supervision claims || Data Type: boolean",
+            "breach_of_employment_contract": "Coverage for breach of employment contract || Data Type: boolean",
+            "denial_of_training_or_opportunity": "Coverage for denial of training or career opportunities || Data Type: boolean",
+            "libel_slander_defamation": "Coverage for defamation claims || Data Type: boolean",
+            "invasion_of_privacy": "Coverage for invasion of privacy claims || Data Type: boolean",
+            "emotional_distress": "Coverage for emotional distress tied to employment claims || Data Type: boolean"
+        },
+        "endorsements_optional": {
+            "third_party_coverage": "Coverage for third-party (non-employee) discrimination claims || Data Type: boolean",
+            "prior_acts_coverage": "Coverage extending to wrongful acts before policy effective date || Data Type: boolean",
+            "wage_and_hour_endorsement": "Defense coverage for wage and hour disputes (e.g., FLSA) || Data Type: boolean",
+            "immigration_violation_endorsement": "Coverage for immigration-related violations || Data Type: boolean"
+        }
+    },
+    "homeowners": {
+        "basic_information": {
+            "insured_name": "Full name of the primary insured person.",
+            "address": "Full address of the insured person.",
+            "insurer_name": "Name of the insurer quoted.",
+            "term": {
+                "start_date": "Policy effective date (YYYY-MM-DD).",
+                "end_date": "Policy expiration date (YYYY-MM-DD)."
+            },
+            "policy_period": "Duration of the policy in months (e.g., '12', '6')."
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "co_insured": [
+            {
+                "name": "Full name of the co-insured person.",
+                "relationship": "Relationship of the co-insured person to the insured person."
+            }
+        ],
+        "property_details": {
+            "year_built": "Year the property was constructed (e.g., '1995', '2010').",
+            "square_footage": "Total square footage of the property (numeric string, e.g., '2500', '3200').",
+            "roof_type": "Type of roofing material (e.g., 'Asphalt Shingle', 'Metal', 'Tile', 'Flat').",
+            "year_roof_updated": "Year when the roof was last updated or replaced (e.g., '2018', '2022').",
+            "construction_type": "Type of construction material used (e.g., 'Frame', 'Masonry', 'Brick', 'Wood Frame')."
+        },
+        "coverage_details": [
+            {
+                "coverage_name": "Name of the coverage type.",
+                "coverage_limit": "Maximum coverage amount.",
+                "coverage_deductible": "Deductible amount if applicable."
+            }
+        ],
+        "deductible": [
+            {
+                "deductible_type": "Type or name of the deductible.",
+                "deductible_structure": "Structure of deductible - either 'flat_amount' or 'percentage'.",
+                "deductible_value": "Deductible amount as numeric or percentage depending on structure."
+            }
+        ],
+        "additional_coverages": [
+            {
+                "coverage_name": "Name of the additional/optional coverage.",
+                "coverage_limit": "Maximum coverage amount for this additional coverage.",
+                "coverage_deductible": "Deductible amount for this coverage if applicable."
+            }
+        ],
+        "discount_applied": [
+            "Name of the discounts applied to the policy."
+        ],
+        "conclusion": "A brief summary of the policy highlighting key benefits, notable discounts, coverage strengths, property protection features, or any important policy details (2-3 sentences)."
+    },
+    "cyber_liability": {
+        "General details": {
+            "retroactive_date": "Retroactive date for claims-made coverage || Data Type: Date",
+            "industry_classification": "Industry or business type classification",
+            "total_employees": "Total number of employees || Data Type: Integer",
+            "annual_revenue": "Annual gross revenue of the business || Data Type: Numeric",
+            "number_of_records": "Number of personally identifiable or health information records maintained || Data Type: Integer",
+            "third_party_IT_providers": "Names of external IT or security service providers",
+            "data_encryption_YN": "Whether data is encrypted at rest and in transit || Data Type: boolean",
+            "MFA_implementation": "Multi-factor authentication implemented || Data Type: boolean",
+            "firewall_installed_YN": "Firewalls installed and maintained || Data Type: boolean",
+            "antivirus_installed_YN": "Antivirus or anti-malware software in use || Data Type: boolean",
+            "backups_frequency": "Frequency of data backups",
+            "employee_cyber_training": "Employees receive regular cybersecurity training || Data Type: boolean",
+            "incident_response_plan": "Formal incident response plan in place || Data Type: boolean",
+            "prior_cyber_claims_YN": "History of prior cyber claims or incidents || Data Type: boolean",
+            "prior_cyber_claims_details": "Details of any previous cyber losses or breaches"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "Coverages": {
+            "network_security_and_privacy": "Coverage for network security and privacy breaches || Data Type: boolean",
+            "media_liability": "Coverage for media/content liability || Data Type: boolean",
+            "regulatory_proceedings": "Coverage for regulatory defense and fines || Data Type: boolean",
+            "business_interruption": "Coverage for business interruption due to cyber events || Data Type: boolean",
+            "system_failure_coverage": "Coverage for non-malicious system failures || Data Type: boolean",
+            "cyber_extortion": "Coverage for ransomware or cyber extortion || Data Type: boolean",
+            "social_engineering_fraud": "Coverage for social engineering or phishing fraud || Data Type: boolean",
+            "reputational_harm": "Coverage for public relations or reputational recovery || Data Type: boolean",
+            "PCI_fines_and_penalties": "Coverage for PCI DSS violation fines || Data Type: boolean",
+            "dependent_business_interruption": "Coverage for interruption due to vendor/supplier failure || Data Type: boolean",
+            "IT_security_report_attached": "Recent IT security audit or report attached || Data Type: boolean"
+        }
+    },
+    "umbrella_liabilities": {
+        "general_info": {
+            "aggregate_limit": "Aggregate limit provided by the umbrella/excess policy || Data Type: Numeric",
+            "each_occurrence_limit": "Each occurrence limit provided by the umbrella/excess policy || Data Type: Numeric",
+            "retention_type": "Type of retention (Self-Insured Retention or Deductible)"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "underlying_limits": {
+            "cgl_general_aggregate": "Underlying Commercial General Liability General Aggregate limit || Data Type: Numeric",
+            "cgl_products_completed_ops_aggregate": "Underlying CGL Products/Completed Operations Aggregate limit (amount, INCLUDED, or EXCLUDED) || Data Type: Numeric or String",
+            "cgl_personal_advertising_injury": "Underlying CGL Personal & Advertising Injury limit || Data Type: Numeric",
+            "auto_combined_single_limit": "Underlying Commercial Auto Combined Single Limit for owned autos || Data Type: Numeric",
+            "auto_hired_liability": "Underlying Commercial Auto Hired Auto Liability limit || Data Type: Numeric",
+            "auto_non_owned_liability": "Underlying Commercial Auto Non-Owned Auto Liability limit || Data Type: Numeric",
+            "employers_liability_accident": "Underlying Employers Liability Bodily Injury by Accident limit || Data Type: Numeric",
+            "employers_liability_disease_employee": "Underlying Employers Liability Bodily Injury by Disease per employee limit || Data Type: Numeric",
+            "employers_liability_disease_policy": "Underlying Employers Liability Bodily Injury by Disease policy limit || Data Type: Numeric",
+            "employee_benefits_liability_each_claim_employee": "Underlying Employee Benefits Liability Each Claim/Employee limit || Data Type: Numeric",
+            "employee_benefits_liability_aggregate": "Underlying Employee Benefits Liability Aggregate limit || Data Type: Numeric",
+            "liquor_each_occurrence": "Underlying Liquor Liability Each Occurrence limit || Data Type: Numeric",
+            "liquor_aggregate": "Underlying Liquor Liability Aggregate limit || Data Type: Numeric",
+            "garage_auto_each_accident": "Underlying Garage/Truckers Auto Liability per accident limit || Data Type: Numeric",
+            "garage_aggregate_operations": "Underlying Garage/Truckers Aggregate for Garage Operations || Data Type: Numeric",
+            "marine_contractors_pollution": "Underlying Contractors Pollution Liability limit || Data Type: Numeric",
+            "marine_liability": "Underlying Marine Liability limit || Data Type: Numeric"
+        }
+    },
+    "personal_auto": {
+        "basic_information": {
+            "insured_name": "Full name of the primary insured person.",
+            "address": "Full address of the insured person.",
+            "insurer_name": "Name of the insurer quoted.",
+            "term": {
+                "start_date": "Policy effective date (YYYY-MM-DD).",
+                "end_date": "Policy expiration date (YYYY-MM-DD)."
+            },
+            "policy_period": "Duration of the policy in months (e.g., '12', '6')."
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "co_insured": [
+            {
+                "name": "Full name of the co-insured person.",
+                "relationship": "Relationship of the co-insured person to the insured person."
+            }
+        ],
+        "driver_info": [
+            {
+                "first_name": "First name of the driver.",
+                "middle_name": "Middle name of the driver (or empty string if unavailable).",
+                "last_name": "Last name of the driver."
+            }
+        ],
+        "vehicle_info": [
+            {
+                "vin": "Vehicle Identification Number (17 characters alphanumeric).",
+                "year": "Year of the vehicle manufacture (e.g., '2023', '2024').",
+                "model": "Model name using only the make and base model of the vehicle (exactly two words, ignore trims or variants). Example: 'KIA K5', 'BMW X3', 'HONDA ACCORD'.",
+                "primary_use": "Purpose of use - must be one of: 'Commute' or 'Pleasure' (choose the closest match).",
+                "coverage": [
+                    {
+                        "coverage_type": "Name of the coverage type (e.g., 'Bodily Injury Liability', 'Property Damage Liability', 'Comprehensive', 'Collision', 'Uninsured Motorist') applied to this vehicle.",
+                        "coverage_value": "Coverage limit and/or deductible. Format varies by coverage type: For liability coverages use 'limit/limit' format (e.g., '100000/300000' for per person/per accident). For deductibles use single amount (e.g., '500', '1000'). For coverages with both, separate with space (e.g., '50000 limit, 250 deductible')."
+                    }
+                ]
+            }
+        ],
+        "premium_breakdown_per_vehicles": [
+            {
+                "vehicle_name": "Full vehicle identifier using year, make, and base model (exactly three words). Example: '2025 KIA K5', '2023 BMW X3'.",
+                "premium_amount": "Insurance premium amount for this specific vehicle (numeric string, e.g., '1234.56')."
+            }
+        ],
+        "discounts_applied": [
+            "Names of discounts applied to the policy."
+        ],
+        "key_policy_features": [
+            "Names of the policy features."
+        ],
+        "conclusion": "A brief summary of the policy highlighting key benefits, notable discounts, coverage strengths, or any important policy details (2-3 sentences)."
+    },
+    "commercial_auto": {
+        "general_info": {
+            "policy_number": "Policy number of the Auto policy",
+            "insurer_name": "Name of the insurance carrier of the Auto policy",
+            "effective_date": "Policy effective/start date || Data Type: Date",
+            "expiry_date": "Policy expiration/end date || Data Type: Date",
+            "policy_term": "Duration of the policy term (e.g., Annual, Multi-year)",
+            "insured_name": "Full legal name of the insured",
+            "dba_name": "Doing Business As (DBA) or operating name of the insured",
+            "mailing_address": "Mailing address of the insured",
+            "insured_contact_phone": "Contact phone number of the insured"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "vehicles": [
+            {
+                "vin": "Vehicle Identification Number (VIN)",
+                "year": "Manufacturing year of the vehicle || Data Type: Integer",
+                "make": "Make of the vehicle",
+                "model": "Model of the vehicle",
+                "stated_value": "Stated or agreed value for the vehicle || Data Type: Numeric",
+                "class_code": "Classification code for rating purposes",
+                "cost_new": "Original cost when new || Data Type: Numeric",
+                "collision": "Collision coverage details or deductible|| Data Type: Numeric",
+                "comprehensive": "Comprehensive coverage details or deductible|| Data Type: Numeric"
+            }
+        ],
+        "drivers": [
+            {
+                "driver_name": "Driver's full name",
+                "date_of_birth": "Date of birth of the driver || Data Type: Date",
+                "gender": "Gender of the driver",
+                "marital_status": "Marital status of the driver",
+                "type": "Type of driver (e.g., listed, excluded)",
+                "license_number": "Driver's license number",
+                "relationship": "Relationship to the insured"
+            }
+        ],
+        "coverages": {
+            "liability_limit": "Combined or split liability limit per accident|| Data Type: Numeric",
+            "bodily_injury_limit": "Bodily injury liability limit per person/per accident || Data Type: Numeric",
+            "property_damage_limit": "Property damage liability limit per accident || Data Type: Numeric",
+            "uninsured_motorist_bi_limit": "Uninsured motorist bodily injury limit || Data Type: Numeric",
+            "uninsured_motorist_pd_limit": "Uninsured motorist property damage limit || Data Type: Numeric",
+            "medical_payment_limit": "Medical payments coverage limit || Data Type: Numeric",
+            "collision_deductible": "Deductible for collision coverage || Data Type: Numeric",
+            "comprehensive_deductible": "Deductible for comprehensive coverage || Data Type: Numeric",
+            "pip_limit": "Personal Injury Protection (PIP) limit || Data Type: Numeric",
+            "uim_limit": "Underinsured motorist coverage limit || Data Type: Numeric",
+            "specified_perils": "Name of specified perils coverage",
+            "non_owned_auto_liability": "Non-owned auto liability coverage || Data Type: boolean",
+            "trailer_interchange": "Trailer interchange coverage details|| Data Type: Numeric",
+            "towing_and_labor": "Towing and labor coverage details|| Data Type: Numeric",
+            "rental_reimbursement": "Rental reimbursement or transportation expense coverage details|| Data Type: Numeric",
+            "gap_coverage": "Lease or loan gap coverage || Data Type: boolean",
+            "electronic_equipment": "Custom sound or electronic equipment coverage details|| Data Type: Numeric",
+            "drive_other_car": "Drive other car (DOC) coverage details|| Data Type: Numeric"
+        },
+        "limits_deductibles": {
+            "deductibles_physical_damage": "Collision and Comprehensive Deductibles by vehicle"
+        }
+    },
+    "inland_marine": {
+        "coverage_information": {
+            "coverage_form": "Type of inland marine coverage form (e.g., Contractors Equipment Floater, Installation Floater)",
+            "deductible": "Standard deductible amount per loss or occurrence || Data Type: Numeric",
+            "coinsurance": "Required coinsurance percentage || Data Type: Percentage",
+            "territory_of_operation": "Geographic territory where coverage applies",
+            "covered_property_description": "Description of the property covered under the policy"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "scheduled_equipment_info": [
+            {
+                "equipment_name": "Name of the scheduled equipment",
+                "location_of_equipment_scheduled": "Location where the scheduled equipment is kept or used",
+                "scheduled_equipment_limit": "Limit of insurance for the scheduled item || Data Type: Numeric",
+                "equipment_description": "Description of the scheduled equipment",
+                "serial_number": "Serial number of the equipment",
+                "year": "Year of manufacture or acquisition || Data Type: Integer",
+                "valuation_method": "Valuation basis (e.g., ACV, Replacement Cost)"
+            }
+        ],
+        "unscheduled_equipment_info": [
+            {
+                "equipment_name": "Name of the unscheduled equipment",
+                "location_of_equipment_unscheduled": "Location of unscheduled equipment",
+                "unscheduled_equipment_limit": "Limit for unscheduled equipment || Data Type: Numeric",
+                "rented_leased_equipment_limit": "Limit for rented or leased equipment || Data Type: Numeric"
+            }
+        ],
+        "covered_causes_of_loss": {
+            "basic_form": "Coverage for basic named perils || Data Type: boolean",
+            "broad_form": "Coverage for broad named perils || Data Type: boolean",
+            "special_form": "Open perils (all-risk) coverage unless excluded || Data Type: boolean"
+        },
+        "limits_deductibles_table": [
+            {
+                "equipment_name": "Name or title of the insured item",
+                "item_location_identifier": "Identifier for the item or location",
+                "description_of_property": "Description of the covered property",
+                "limit_of_insurance": "Limit of insurance applicable || Data Type: Numeric",
+                "valuation_basis_acv_rc": "Valuation method (Actual Cash Value or Replacement Cost)",
+                "deductible": "Deductible amount || Data Type: Numeric",
+                "coinsurance_requirement": "Coinsurance percentage requirement || Data Type: Percentage"
+            }
+        ]
+    },
+    "d_and_o": {
+        "application_information": {
+            "insured_address": "Address of the insured entity"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "policy_details": {
+            "policy_number": "Policy number",
+            "policy_premium": "Total policy premium || Data Type: Numeric",
+            "agency_name": "Name of the producing agency",
+            "carrier_name": "Name of the underwriting carrier",
+            "effective_date": "Policy effective date || Data Type: Date",
+            "expiration_date": "Policy expiration date || Data Type: Date"
+        },
+        "d&O_coverage_limits": {
+            "Side_A_limit": "Limit for Side A coverage (non-indemnifiable loss for directors and officers) || Data Type: Numeric",
+            "Side_B_limit": "Limit for Side B coverage (corporate reimbursement) || Data Type: Numeric",
+            "Side_C_entity_coverage": "Entity coverage for securities claims || Data Type: boolean",
+            "limit_structure": "Structure of limits (Separate, Shared, or Blended across Sides A/B/C)"
+        },
+        "named_positions_individuals": {
+            "officer_name": "Name and/or position of covered officers or individuals"
+        }
+    },
+    "professional_liability": {
+        "policy_details": {
+            "policy_number": "Policy number",
+            "policy_premium": "Total policy premium || Data Type: Numeric",
+            "agency_name": "Name of the producing agency",
+            "carrier_name": "Name of the underwriting carrier",
+            "effective_date": "Policy effective date || Data Type: Date",
+            "expiration_date": "Policy expiration date || Data Type: Date"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "operations_services_info": {
+            "professional_services_offered": "Description of professional services provided",
+            "licensing_required_YN": "Requirement for professional licensing || Data Type: boolean",
+            "licensed_employees_count": "Number of licensed professional employees || Data Type: Integer",
+            "total_staff_count": "Total number of staff including administrative || Data Type: Integer",
+            "average_years_experience": "Average years of professional experience among staff || Data Type: Numeric",
+            "states_of_operation": "States in which services are provided",
+            "percentage_of_services_by_type": "Breakdown of revenue or services by type",
+            "third_party_contracts_YN": "Use of third-party contractors || Data Type: boolean",
+            "subcontractor_insurance_requirements": "Requirement for subcontractors to carry E&O insurance || Data Type: boolean",
+            "use_of_disclaimers_or_limitations": "Use of disclaimers or limitation-of-liability clauses || Data Type: boolean"
+        },
+        "requested_coverage_info": {
+            "each_claim_limit": "Monetary limit per claim or wrongful act || Data Type: Numeric",
+            "aggregate_limit": "Monetary aggregate limit || Data Type: Numeric",
+            "requested_deductible": "Requested deductible or retention per claim || Data Type: Numeric",
+            "retroactive_date": "Date from which prior acts are covered under the policy for claims-made professional liability coverage || Data Type: Date"
+        },
+        "current_coverage": {
+            "current_EO_carrier": "Current or prior Errors & Omissions carrier",
+            "current_EO_limit": "Current policy limit || Data Type: Numeric",
+            "current_EO_deductible": "Current deductible amount || Data Type: Numeric"
+        }
+    },
+    "commercial_crime": {
+        "coverage_information": {
+            "coverage_form": "Type of crime coverage form (e.g., Commercial Crime, Fidelity Bond)",
+            "coverage_basis": "Basis of coverage (Discovery or Loss Sustained)",
+            "insuring_agreements": "Selected insuring agreements (e.g., Employee Theft, Forgery, Computer Fraud)",
+            "policy_limit_per_occurrence": "Limit per occurrence or loss || Data Type: Numeric",
+            "policy_limit_aggregate": "Aggregate limit for the policy period || Data Type: Numeric",
+            "deductible": "Deductible per occurrence || Data Type: Numeric",
+            "employee_dishonesty_limit": "Specific limit for employee dishonesty/theft || Data Type: Numeric",
+            "client_coverage": "Coverage extends to client property || Data Type: boolean",
+            "third_party_coverage": "Third-party fidelity coverage included || Data Type: boolean",
+            "ERISA_bond": "ERISA fidelity bond coverage included || Data Type: boolean"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "exclusions": {
+            "acts_of_insured": "Exclusion for dishonest acts by the insured or owners || type: boolean",
+            "indirect_loss": "Exclusion for consequential or indirect losses || type: boolean",
+            "voluntary_parting": "Exclusion for voluntary parting with property || type: boolean",
+            "war_and_nuclear": "Exclusion for war or nuclear events || type: boolean",
+            "inventory_shortages": "Exclusion for unexplained inventory shortages || type: boolean",
+            "government_action": "Exclusion for government seizure || type: boolean",
+            "prior_known_loss": "Exclusion for known prior losses || type: boolean"
+        }
+    },
+    "surety_bond": {
+        "policy_identification": {
+            "bond_number": "Bond policy number",
+            "bond_type": "Type or classification of the surety bond",
+            "effective_date": "Effective date of the bond || Data Type: Date",
+            "expiration_date": "Expiration date of the bond || Data Type: Date"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "parties": {
+            "principal_name": "Full name of the principal (obligated party)",
+            "principal_address": "Mailing address of the principal",
+            "obligee_name": "Full name of the obligee (beneficiary)",
+            "obligee_address": "Mailing address of the obligee"
+        },
+        "financials": {
+            "bond_limit": "Penal sum or bond amount (maximum liability) || Data Type: Numeric",
+            "bond_premium": "Premium charged for the bond || Data Type: Numeric",
+            "commission_percentage": "Commission percentage for the agent or broker || Data Type: Percentage"
+        }
+    },
+    "dwelling_fire": {
+        "insured_details": {
+            "insured_residence_address": "Street address of the insured residence",
+            "insured_city": "City of the insured residence",
+            "insured_state": "State of the insured residence",
+            "insured_zip_code": "ZIP code of the insured residence"
+        },
+        "mailing_address": {
+            "mailing_address": "Separate mailing street address if different from residence",
+            "mailing_city": "Mailing city",
+            "mailing_state": "Mailing state",
+            "mailing_zip_code": "Mailing ZIP code"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "coverages": {
+            "residence": "Limit for Coverage A - Dwelling/Residence || Data Type: Numeric",
+            "other_structures": "Limit for Coverage B - Other Structures || Data Type: Numeric",
+            "personal_property": "Limit for Coverage C - Personal Property || Data Type: Numeric",
+            "loss_of_use": "Limit for Coverage D - Loss of Use/Additional Living Expense || Data Type: Numeric",
+            "personal_liability_per_occurrence": "Personal liability limit per occurrence || Data Type: Numeric",
+            "Premises_Liability_Aggregate": "Premises liability aggregate limit || Data Type: Numeric",
+            "Medical_Payments_Per_Person": "Medical payments limit per person || Data Type: Numeric",
+            "Premises_Liability_Other": "Additional premises liability aggregate limit || Data Type: Numeric",
+            "Policy_Deductible": "Base policy deductible || Data Type: Numeric",
+            "Catastrophic_Windstorm_Deductible": "Deductible for catastrophic windstorm losses || Data Type: Numeric"
+        },
+        "Premiums": {
+            "Landlords_Premises_Premium": "Premium for landlord premises coverage || Data Type: Numeric",
+            "optional_service_line_limit": "Limit for optional service line coverage || Data Type: Numeric",
+            "optional_service_line_premium": "Premium for optional service line coverage || Data Type: Numeric",
+            "optional_vandalism": "Details of optional vandalism coverage|| Data Type: Numeric",
+            "total_annual_premium": "Total annual policy premium || Data Type: Numeric"
+        }
+    },
+    "garage_auto_dealers": {
+        "general_info": {
+            "coverage_form": "Type of garage coverage provided (Garage Liability / Garagekeepers / Dealer Physical Damage)",
+            "admitted_status": "Indicates whether the policy is Admitted or Non-Admitted",
+            "coverage_basis": "Occurrence-based coverage for garage operations"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "limits": {
+            "garage_liability_limit": "Liability limit per accident for bodily injury and property damage arising out of garage operations",
+            "garagekeepers_comprehensive_limit": "Limit for damage to customers’ vehicles from fire, theft, vandalism, or weather while in dealer care",
+            "garagekeepers_collision_limit": "Limit for collision damage to customers’ vehicles while in dealer care",
+            "dealer_physical_damage_comprehensive_limit": "Limit for comprehensive damage to dealer-owned vehicles (inventory, demo, loaners)",
+            "dealer_physical_damage_collision_limit": "Limit for collision damage to dealer-owned vehicles"
+        },
+        "deductibles": {
+            "garagekeepers_comprehensive_deductible": "Deductible applicable to garagekeepers comprehensive losses",
+            "garagekeepers_collision_deductible": "Deductible applicable to garagekeepers collision losses",
+            "dealer_physical_damage_comprehensive_deductible": "Deductible applicable to dealer-owned vehicle comprehensive losses",
+            "dealer_physical_damage_collision_deductible": "Deductible applicable to dealer-owned vehicle collision losses"
+        },
+        "key_coverages_included": {
+            "customer_vehicle_protection": "Coverage for customer vehicles while in the insured’s care, custody, or control || type: boolean",
+            "dealer_inventory_coverage": "Coverage for dealer-owned vehicles including inventory and demo units || type: boolean",
+            "test_drive_exposure": "Coverage for liability arising from test drives conducted as part of operations || type: boolean"
+        },
+        "key_exclusions_conditions": {
+            "unauthorized_driver_exclusion": "Excludes losses arising from unauthorized or unapproved drivers",
+            "excluded_vehicle_use": "Excludes certain non-garage or non-business vehicle uses",
+            "wear_and_tear": "Excludes normal wear and tear or mechanical breakdown"
+        },
+        "additional_interests": {
+            "additional_insureds": "Indicates whether additional insureds can be added as required (names not listed in proposal)",
+            "loss_payees": "Indicates whether loss payees can be added for dealer-owned vehicles"
+        },
+        "premium_summary": {
+            "total_policy_premium": "Estimated total premium for the Garage Auto Dealers coverage"
+        }
+    },
+    "excess_liability": {
+        "insured_information": {
+            "named_insured": "Full name of the primary insured individual or entity",
+            "mailing_address": "Complete mailing address of the named insured",
+            "producer_name": "Name of the insurance producer or broker"
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Add brief notes for this line of business in 20–30 words, covering key assumptions, special conditions, deductibles, endorsements, or underwriting remarks relevant to the pricing."
+        },
+        "policy_information": {
+            "policy_number": "Unique policy identifier",
+            "policy_effective_date": "Policy effective start date || Data Type: Date",
+            "policy_expiration_date": "Policy expiration date || Data Type: Date"
+        },
+        "coverage_limits": {
+            "each_occurrence_limit": "Limit per occurrence or event || Data Type: Numeric",
+            "aggregate_limit": "Aggregate limit for the policy period || Data Type: Numeric"
+        },
+        "premium_information": {
+            "total_policy_premium": "Total premium including fees and taxes || Data Type: Numeric"
+        },
+        "underlying_insurance_schedule": [
+            {
+                "policy_number": "Underlying policy number",
+                "coverage_type": "Type of underlying coverage",
+                "company": "Underlying carrier name",
+                "policy_period": "Underlying policy period",
+                "limits": "Underlying coverage limits"
+            }
+        ]
+    }
+}

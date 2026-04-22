@@ -1,0 +1,126 @@
+[
+    {
+        "carriers": {
+            "name": "Auto Club Insurance Association"
+        },
+        "insured_name": {
+            "first_name": "OLIVIA",
+            "middle_name": "K",
+            "last_name": "SZWAJKOWSKI"
+        },
+        "co_insured_name": {},
+        "address": {
+            "street": "36648 N IOLA AVE",
+            "city": "INGLESIDE",
+            "state": "IL",
+            "zip_code": "60041-9608"
+        },
+        "term": {
+            "start_date": "2024-10-01",
+            "end_date": "2025-10-01"
+        },
+        "policy_period": "12",
+        "paid_in_full_discount": null,
+        "final_paid_in_full_amount": null,
+        "total_premium": "$1819.27",
+        "property_details": {
+            "year_built": "",
+            "square_footage": "",
+            "roof_type": "",
+            "year_roof_updated": "",
+            "construction_type": ""
+        },
+        "coverage_details": {
+            "A - Dwelling": "310122 limit, 1000 deductible",
+            "B - Additional Structures": "31012 limit, 1000 deductible",
+            "C - Personal Property": "155061 limit, 1000 deductible",
+            "Additional Living Expense": "31012 limit, 1000 deductible",
+            "E - Personal Liability (Each Occurrence)": "300000 limit",
+            "F - Medical Payments to Others (Each Person)": "1000 limit"
+        },
+        "deductible": {
+            "All Other Perils": "flat_amount 1000",
+            "Windstorm and Hail": "flat_amount 1000"
+        },
+        "additional_coverages": {
+            "Roof Materials Extended": "",
+            "Building Codes": "20% limit"
+        },
+        "discount_applied": {
+            "Advance Purchase": "true",
+            "EFT": "true",
+            "Claim Free": "true",
+            "Home Buyer": "true",
+            "Paperless": "true",
+            "Payment": "true",
+            "Premier": "true",
+            "Safety Device": "true",
+            "Smoke Free": "true",
+            "AAA Membership": "true"
+        },
+        "conclusion": "This Homeowners Insurance Quotation provides details on selected coverage and payment options. It highlights various discounts including Advance Purchase, EFT, Claim Free, and AAA Membership, with an estimated total premium of $1,819.27 for the policy term of October 1, 2024, to October 1, 2025."
+    },
+    {
+        "carriers": {
+            "name": "Encompass Insurance Company"
+        },
+        "insured_name": {
+            "first_name": "Olivia",
+            "middle_name": "K",
+            "last_name": "Szwajkowski"
+        },
+        "co_insured_name": {
+            "first_name": "Olivia",
+            "middle_name": "K",
+            "last_name": "Szwajkowski"
+        },
+        "address": {
+            "street": "36648 N lola Ave",
+            "city": "Ingleside",
+            "state": "IL",
+            "zip_code": "60041-9608"
+        },
+        "term": {
+            "start_date": "2024-10-01",
+            "end_date": "2025-10-01"
+        },
+        "policy_period": "12",
+        "paid_in_full_discount": "",
+        "final_paid_in_full_amount": "$1272.00",
+        "total_premium": "$1272.00",
+        "property_details": {
+            "year_built": "",
+            "square_footage": "",
+            "roof_type": "",
+            "year_roof_updated": "",
+            "construction_type": ""
+        },
+        "coverage_details": {
+            "Dwelling Protection - Coverage A": "253400 limit",
+            "Other Structures Protection - Coverage B": "25340 limit",
+            "Personal Property Protection \u2013 Coverage C (includes Personal Property Reimbursement)": "126700 limit",
+            "Additional Living Expense": "50680 limit",
+            "Fair Rental Income": "0 limit",
+            "Building Codes": "25340 limit",
+            "Family Liability Protection \u2013 Coverage X": "300000 limit",
+            "Guest Medical Protection - Coverage Y": "1000 limit"
+        },
+        "deductible": {
+            "All Peril Deductible": "flat_amount 1000",
+            "Windstorm and Hail Deductible": "flat_amount 2500"
+        },
+        "additional_coverages": {
+            "Identity Theft Expenses Coverage": "$25000 limit",
+            "Loss Assessments": " limit, $500 deductible",
+            "Roof Replacement Coverage": ""
+        },
+        "discount_applied": {
+            "Claim Free Discount": "true",
+            "Paperless Discount": "true",
+            "Welcome Discount": "true",
+            "Home Buyer Discount": "true",
+            "Protective Device Discount": "true"
+        },
+        "conclusion": "This document is a quote and not a binder of insurance. Policyholders are advised to review the quote for accuracy, as inaccuracies may affect the rate. The provided rates are subject to verification, and any questions should be directed to the agent."
+    }
+]

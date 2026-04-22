@@ -1,0 +1,37 @@
+[project]
+name = "IDP"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "asynciolimiter>=1.2.0",
+    "celery>=5.5.3",
+    "dotenv>=0.9.9",
+    "fastapi>=0.116.1",
+    "google-genai>=1.31.0",
+    "langchain-community>=0.3.27",
+    "langchain-google-genai>=2.1.9",
+    "langchain-openai>=0.3.30",
+    "langgraph>=0.6.4",
+    "loguru>=0.7.3",
+    "nest-asyncio>=1.6.0",
+    "openai>=1.99.9",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.2",
+    "psutil>=7.0.0",
+    "pydantic-settings>=2.10.1",
+    "pymupdf>=1.26.3",
+    "pypdf2>=3.0.1",
+    "python-dotenv>=1.1.1",
+    "python-multipart>=0.0.20",
+    "rapidfuzz>=3.14.1",
+    "redis>=6.4.0",
+    "uvicorn>=0.35.0",
+]
+
+[dependency-groups]
+dev = [
+    "aiofiles>=24.1.0",
+]

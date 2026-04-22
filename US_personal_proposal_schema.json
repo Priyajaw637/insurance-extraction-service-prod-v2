@@ -1,0 +1,120 @@
+{
+    "Auto": {
+        "basic_information": {
+            "insured_name": "Full name of the primary insured person.",
+            "address": "Full address of the insured person.",
+            "insurer_name": "Name of the insurer quoted.",
+            "term": {
+                "start_date": "Policy effective date (YYYY-MM-DD).",
+                "end_date": "Policy expiration date (YYYY-MM-DD)."
+            },
+            "policy_period": "Duration of the policy in months (e.g., '12', '6')."
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Free-text field for remarks, assumptions, underwriting comments, or any special conditions relevant to this pricing line (e.g., WELs, deductibles, subjectivities)."
+        },
+        "co_insured": [
+            {
+                "name": "Full name of the co-insured person.",
+                "relationship": "Relationship of the co-insured person to the insured person."
+            }
+        ],
+        "driver_info": [
+            {
+                "first_name": "First name of the driver.",
+                "middle_name": "Middle name of the driver (or empty string if unavailable).",
+                "last_name": "Last name of the driver."
+            }
+        ],
+        "vehicle_info": [
+            {
+                "vin": "Vehicle Identification Number (17 characters alphanumeric).",
+                "year": "Year of the vehicle manufacture (e.g., '2023', '2024').",
+                "model": "Model name using only the make and base model of the vehicle (exactly two words, ignore trims or variants). Example: 'KIA K5', 'BMW X3', 'HONDA ACCORD'.",
+                "primary_use": "Purpose of use - must be one of: 'Commute' or 'Pleasure' (choose the closest match).",
+                "coverage": [
+                    {
+                        "coverage_type": "Name of the coverage type (e.g., 'Bodily Injury Liability', 'Property Damage Liability', 'Comprehensive', 'Collision', 'Uninsured Motorist') applied to this vehicle.",
+                        "coverage_value": "Coverage limit and/or deductible. Format varies by coverage type: For liability coverages use 'limit/limit' format (e.g., '100000/300000' for per person/per accident). For deductibles use single amount (e.g., '500', '1000'). For coverages with both, separate with space (e.g., '50000 limit, 250 deductible')."
+                    }
+                ]
+            }
+        ],
+        "premium_breakdown_per_vehicles": [
+            {
+                "vehicle_name": "Full vehicle identifier using year, make, and base model (exactly three words). Example: '2025 KIA K5', '2023 BMW X3'.",
+                "premium_amount": "Insurance premium amount for this specific vehicle (numeric string, e.g., '1234.56')."
+            }
+        ],
+        "discounts_applied": [
+            "Names of discounts applied to the policy."
+        ],
+        "key_policy_features": [
+            "Names of the policy features."
+        ],
+        "conclusion": "A brief summary of the policy highlighting key benefits, notable discounts, coverage strengths, or any important policy details (2-3 sentences)."
+    },
+    "Home": {
+        "basic_information": {
+            "insured_name": "Full name of the primary insured person.",
+            "address": "Full address of the insured person.",
+            "insurer_name": "Name of the insurer quoted.",
+            "term": {
+                "start_date": "Policy effective date (YYYY-MM-DD).",
+                "end_date": "Policy expiration date (YYYY-MM-DD)."
+            },
+            "policy_period": "Duration of the policy in months (e.g., '12', '6')."
+        },
+        "program_pricing_matrix": {
+            "lob": "The specific line of business or coverage type this pricing entry applies to (e.g., Property, General Liability, Auto). Must align with the proposal's coverage sections.",
+            "carrier": "The insurance carrier or market providing the quoted terms for this line of business.",
+            "base_premium_usd": "The quoted premium amount in ($CAD) before adding any taxes, fees, or optional charges.",
+            "terrorism_premium_usd": "The additional premium amount (if any) charged for terrorism coverage, either mandatory or optional depending on the LOB.",
+            "all_in_premium_usd": "The total premium in USD for this line of business, including all mandatory surcharges, policy fees, and the terrorism premium if applicable — but before applying provincial taxes.",
+            "notes": "Free-text field for remarks, assumptions, underwriting comments, or any special conditions relevant to this pricing line (e.g., WELs, deductibles, subjectivities)."
+        },
+        "co_insured": [
+            {
+                "name": "Full name of the co-insured person.",
+                "relationship": "Relationship of the co-insured person to the insured person."
+            }
+        ],
+        "property_details": {
+            "year_built": "Year the property was constructed (e.g., '1995', '2010').",
+            "square_footage": "Total square footage of the property (numeric string, e.g., '2500', '3200').",
+            "roof_type": "Type of roofing material (e.g., 'Asphalt Shingle', 'Metal', 'Tile', 'Flat').",
+            "year_roof_updated": "Year when the roof was last updated or replaced (e.g., '2018', '2022').",
+            "construction_type": "Type of construction material used (e.g., 'Frame', 'Masonry', 'Brick', 'Wood Frame')."
+        },
+        "coverage_details": [
+            {
+                "coverage_name": "Name of the coverage type.",
+                "coverage_limit": "Maximum coverage amount.",
+                "coverage_deductible": "Deductible amount if applicable."
+            }
+        ],
+        "deductible": [
+            {
+                "deductible_type": "Type or name of the deductible.",
+                "deductible_structure": "Structure of deductible - either 'flat_amount' or 'percentage'.",
+                "deductible_value": "Deductible amount as numeric or percentage depending on structure."
+            }
+        ],
+        "additional_coverages": [
+            {
+                "coverage_name": "Name of the additional/optional coverage.",
+                "coverage_limit": "Maximum coverage amount for this additional coverage.",
+                "coverage_deductible": "Deductible amount for this coverage if applicable."
+            }
+        ],
+        "discount_applied": [
+            "Name of the discounts applied to the policy."
+        ],
+        "conclusion": "A brief summary of the policy highlighting key benefits, notable discounts, coverage strengths, property protection features, or any important policy details (2-3 sentences)."
+    }
+}
