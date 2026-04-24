@@ -1,6 +1,7 @@
 import datetime
 import os
 import shutil
+import tempfile
 from typing import Any, Dict, List, Optional
 from uuid import uuid4
 
@@ -81,13 +82,15 @@ async def create_insurance_workflow() -> StateGraph:
 async def process_insurance_document(
     pdf_path: str,
     insurance_extraction_schema: Dict[str, Any],
-    tmp_dir="/tmp",
+    tmp_dir=None,
     line_of_business: str = "Commercial",
     country: str = "US",
     policy_document_id="",
     list_lobs: Optional[List[str]] = None,
     tool_name: Optional[str] = None,
 ):
+    if tmp_dir is None:
+        tmp_dir = tempfile.gettempdir()
     try:
         logger.info(
             f"[document:{policy_document_id}] Workflow started | lob={line_of_business} country={country} tool={tool_name}"

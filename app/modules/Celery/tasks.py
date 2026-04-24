@@ -2,6 +2,7 @@ import asyncio
 import json
 import os
 import re
+import tempfile
 from datetime import datetime
 import aiohttp
 
@@ -254,7 +255,7 @@ def process_insurance_documents_commercial(
         finally:
             cleanup_tasks = []
             for value in data_mapping_dict.values():
-                file_path = f"/tmp/{str(value.get('document_id'))}.pdf"
+                file_path = os.path.join(tempfile.gettempdir(), f"{str(value.get('document_id'))}.pdf")
                 if await asyncio.to_thread(os.path.exists, file_path):
                     cleanup_tasks.append(asyncio.to_thread(os.remove, file_path))
             if cleanup_tasks:
@@ -541,7 +542,7 @@ def process_proposal_documents_commercial(
         finally:
             cleanup_tasks = []
             for value in data_mapping_dict.values():
-                file_path = f"/tmp/{str(value.get('document_id'))}.pdf"
+                file_path = os.path.join(tempfile.gettempdir(), f"{str(value.get('document_id'))}.pdf")
                 if await asyncio.to_thread(os.path.exists, file_path):
                     cleanup_tasks.append(asyncio.to_thread(os.remove, file_path))
             if cleanup_tasks:
@@ -894,7 +895,7 @@ def process_proposal_documents_commercial_us(
             # Cleanup temporary files
             cleanup_tasks = []
             for value in data_mapping_dict.values():
-                file_path = f"/tmp/{str(value.get('document_id'))}.pdf"
+                file_path = os.path.join(tempfile.gettempdir(), f"{str(value.get('document_id'))}.pdf")
                 if await asyncio.to_thread(os.path.exists, file_path):
                     cleanup_tasks.append(asyncio.to_thread(os.remove, file_path))
             if cleanup_tasks:

@@ -2,6 +2,7 @@ import base64
 import multiprocessing as mp
 import os
 import shutil
+import tempfile
 import time
 from pathlib import Path
 from typing import Literal
@@ -28,9 +29,11 @@ def render_page_range(args):
 
 def policy_pdf_to_image(
     pdf_path,
-    outdir="/tmp",
+    outdir=None,
     zoom=2.0,
 ):
+    if outdir is None:
+        outdir = tempfile.gettempdir()
     os.makedirs(outdir, exist_ok=True)
     proc = psutil.Process()
     t0 = time.perf_counter()

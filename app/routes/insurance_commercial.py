@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import tempfile
 from typing import Any, Dict, List, Optional
 
 import aiofiles
@@ -45,10 +46,12 @@ async def process_single_document(
     country: str,
     tool_process_id: str,
     commercial_extraction_schema: Dict[str, Any],
-    tmp_dir: str = "/tmp",
+    tmp_dir: str = None,
     total_steps: int = 0,
     lob_possibilities: List[str] = [],
 ):
+    if tmp_dir is None:
+        tmp_dir = tempfile.gettempdir()
     try:
         first_level_instruction = ""
         second_level_instruction = ""
